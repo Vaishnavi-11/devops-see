@@ -1,0 +1,8 @@
+Start Minikube
+./minikube start
+kubectl get pods --all-namespaces
+minikube dashboard
+
+
+
+kafka files get from question 20 (git clone https://github.com/d1egoaz/minikube-kafka-cluster and execute until minikube service command)
