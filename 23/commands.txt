@@ -1,0 +1,5 @@
+docker build -f .\Dockerfile -t myserver:1 .
+
+docker images
+
+docker run --add-host=alpha-local:<ip-address> -p 80:9080 myserver:1
