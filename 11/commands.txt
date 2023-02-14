@@ -1,0 +1,26 @@
+Question: Create a kubernetes cluster with docker as a hypervisor. List master processes
+running inside minikube Find how many nodes are there in the cluster and
+role(s) of each node.
+
+--> kubernetes cluster with docker as a hypervisor
+minikube start --driver=docker
+minikube config set driver docker
+
+--> List master processes running inside minikube
+minikube status
+kubectl get pods --namespace=kube-system -l component=kube-apiserver
+
+--> Find how many nodes are there in the cluster
+kubectl get nodes
+kubectl get nodes -o wide
+
+--> role(s) of each node
+1. Master Node - consists of 4 processes
+    API server - The API server is the front end for the Kubernetes control plane
+    Scheduler - decides where to schedule the application in the worker nodes
+    Controller - detects state change
+    Etcd - key value store
+2. Worker Node - consists of 3 necessary process
+    Container runtime - like docker
+    Kubectl - interaction between node and container
+    Kubeproxy - forwards request from services to pod
