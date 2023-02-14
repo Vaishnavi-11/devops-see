@@ -1,0 +1,8 @@
+--> Create a Docker image which contains Python.
+    Create a tag and push the image to Docker Hub registry
+
+docker build -f  Dockerfile .
+docker build -t python-image .
+docker tag python-image <your-dockerhub-username>/python-image:latest
+docker login
+docker push <your-dockerhub-username>/python-image:latest
