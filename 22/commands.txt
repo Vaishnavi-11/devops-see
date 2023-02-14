@@ -1,0 +1,25 @@
+Demonstrate all steps required to run nginx web-server in a docker and connect to it.
+Document output of following steps: 
+1. Obtaining version 1.23.3 of nginx from Official Nginx Image repository in docker hub
+docker pull nginx:1.23.3
+
+2. Show the listing of the above docker image on your local system
+docker image ls
+
+3. Run the nginx document with the following Parameters: name: alpha-nginx, host-port:80, container-port: 80, use detach mode
+docker run -d --add-host=alpha-nginx:<ipaddress> -p 80:80 nginx:1.23.3
+docker container ls
+curl localhost:80
+
+4. Login to the container and check status of nginx process inside the container 
+docker exec -ti 7ed052617806 bash
+apt-get update
+apt-get install procps
+ps
+ps -eaf
+exit
+
+5. Stop the Container and Remove the docker image from your local system
+docker container stop <contaniner-id>
+docker rm <contaniner-id>
+docker image rm nginx:1.23.3
