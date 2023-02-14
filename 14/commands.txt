@@ -4,7 +4,8 @@ docker run -p 8080:8080 -p 50000:50000 jenkins/jenkins
 Jenkins UI:
 go to localhost:8080
 enter the initial password and set up jenkins, install plugins
+On dashboard go to Manage jenkins -> Manage plugins -> Available plugins -> search for go and install that
 
 --> Demonstrate use of a Jenkins project to build a simple Go lang source code with source code to build in Git Hub repo
-New item -> freestyle -> In Configuration - Source code management -> select Git -> repo link https://github.com/sandeepacademe/dewdrop 
--> branch */main -> Build Steps - Execute shell -> go build server.go
+New item -> freestyle -> In Configuration - Source code management -> select Git -> repo link https://github.com/Vaishnavi-11/devops-see 
+-> branch */main -> Build Steps - Execute shell -> go build ./14/main.go
