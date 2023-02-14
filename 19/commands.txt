@@ -1,0 +1,16 @@
+--> Create a docker image which contains a C language compiler installed in it.
+Provide the following outputs: 
+--> a) Contents of Dockerfile to build the image 
+
+--> (b) Output of command required to build the docker image. © Ensure the image is tagged as "cdev" 
+docker build -t cdev .
+docker tag cdev <your-dockerhub-username>/c_compiler:latest
+
+--> (d) Show listing of the image in your docker environment 
+docker images
+
+--> (e) Push the image into your docker hub account 
+docker login
+docker push <your-dockerhub-username>/c_compiler:latest
+
+--> (f) Make the image public in your docker hub repository
