@@ -1,0 +1,12 @@
+--> Create a deployment with name = “staging” and image as “nginx” 
+kubectl apply -f deployment.yaml
+
+--> Get name of pods running in a kubernetes cluster
+kubectl get pods -o wide
+
+--> Get kubernetes services and cluster IP.
+kubectl get services -o wide
+
+--> Demonstrate pods with replicaset value of 2
+kubectl scale deployment staging --replicas=2
+kubectl get replicaset
