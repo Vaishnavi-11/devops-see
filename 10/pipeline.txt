@@ -1,0 +1,29 @@
+Question: Create a Jenkins job for python web server app
+
+pipeline {
+    agent any
+    stages {
+        stage("Cloning our Git") {
+            steps {
+                bat "git clone https://github.com/vishala-r-edu/pyjenkinsdemo.git"
+            }
+        }
+        stage("Build") {
+            steps {
+                dir("pyjenkinsdemo") {
+                    bat "docker build -t web-app:v1 ."
+                }
+            }
+        }
+        stage("Run") {
+            steps {
+                bat "docker run -d --add-host=web-app:192.168.0.112 -p 5000:8080 web-app:v1"
+            }
+        }
+        stage("Test") {
+            steps {
+                bat "curl 192.168.0.112:5000"
+            }
+        }
+    }
+}
