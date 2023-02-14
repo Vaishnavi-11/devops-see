@@ -1,0 +1,13 @@
+--> Create a kubernetes cluster with hyperv as hypervisor. 
+minikube start --driver=hyperv
+minikube config set driver hyperv
+
+--> Get the status of the kubernetes service that controls pod in a kubernetes cluster
+minikube status
+systemctl status kubelet.service
+
+--> Access dashboard in minikube
+minikube dashboard
+
+--> Stop kubernetes cluster
+minikube delete
