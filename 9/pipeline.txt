@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                dir('C:/Personal/BMSCE/Semester/VII Sem/DevOps/see/9'){
+                    bat 'docker build -t prog9 .'
+                }
+            }
+        }
+        stage('Run') {
+            steps {
+                dir('C:/Personal/BMSCE/Semester/VII Sem/DevOps/see/9') {
+                    bat 'docker run prog9'
+                }
+            }
+        }
+    }
+}
