@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-dpl
+  labels:
+    app: nginx-dpl
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx-dpl
+  template:
+    metadata:
+      labels:
+        app: nginx-dpl
+    spec:
+      containers:
+      - name: pod1
+        image: nginx:1.23.3
+        ports:
+        - containerPort: 80

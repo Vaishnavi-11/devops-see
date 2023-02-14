@@ -1,0 +1,6 @@
+--> Deploy an application using minikube- create deployment.yaml, 3 pods, each
+    containing one Docker container.
+
+minikube start
+kubectl apply -f deployment.yaml
+kubectl get pods
